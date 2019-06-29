@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {authenticator} from '../utils/authenticator';
 
 export const FETCHING_FRIENDS = 'FETCHING_FRIENDS';
