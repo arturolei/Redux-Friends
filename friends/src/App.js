@@ -15,12 +15,14 @@ function App() {
       <div className="App">
         <h2>Friends List</h2>
         <nav> 
-          <Link to='/api/login'>Log In Here</Link>
+          <Link className="navbar-link" to='/api/login'>Log In Here</Link>
+          <Link className="navbar-link" to='/add-friend'>Add a Friend</Link>
+          <Link className="navbar-link" to='/api/friends'>Friend List</Link>
         </nav>
         
         <Route path='/api/login' component={Login} />
         <PrivateRoute exact path ='/api/friends' component={FriendList} />
-        <PrivateRoute exact path ='/api/friends' component={FriendForm} />  
+        <Route exact path ='/add-friend' component={FriendForm} />  
       </div>
     
     </Router>

@@ -29,6 +29,7 @@ const reducer = (state = initialState, action) => {
             fetchingFriends: false,
             err: action.payload
         }
+
         case LOGIN_START: 
         return {
             ...state,
@@ -39,6 +40,27 @@ const reducer = (state = initialState, action) => {
             ...state,
             loggingIn: false
         }
+
+        case ADDING_FRIEND_START:
+            return {
+                ...state,
+                err:'',
+                savingFriends:true
+            }
+        case ADDING_FRIEND:
+            return {
+                ...state,
+                friends: action.payload,
+                savingFriends:true,
+                err:''
+            }
+
+        case ADDING_FRIEND_ERROR:
+            return{
+                ...state,
+                savingFriends:false,
+                err: action.payload
+            }
 
         default:
             return state
